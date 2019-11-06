@@ -1,17 +1,30 @@
 {
-    "extends": [
-        "airbnb",
-        "prettier",
-        "prettier/react"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": [
-            1, 
-            {
-                "extensions": [
-                    ".js"
-                ] 
-            }
-        ]
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "rules": {
+    "no-console": "off",
+    "no-undef": "off",
+    "no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "import/no-unresolved": [2, { "caseSensitive": false }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js"]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx"]
+      }
     }
+  }
 }
