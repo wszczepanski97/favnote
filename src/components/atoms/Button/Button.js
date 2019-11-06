@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 const Button = styled.button`
   height: 47px;
   /*if width is false return 220px*/
-  width: ${({ width }) => width || '220px'};
-  background-color: ${({ color }) => color || 'hsl(49, 100%, 58%)'};
+  width: 220px;
+  background-color: ${({ color, theme }) => color || theme.primary};
   border: none;
   border-radius: 50px;
   font-family: 'Montserrat';
