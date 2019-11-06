@@ -8,6 +8,7 @@
     "window": true
   },
   "rules": {
+    "no-extraneous-dependencies": 0,
     "no-console": "off",
     "no-undef": "off",
     "no-use-before-define": ["error", { "functions": false, "classes": false }],

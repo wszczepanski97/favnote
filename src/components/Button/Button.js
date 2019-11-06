@@ -4,7 +4,7 @@ const Button = styled.button`
   height: 47px;
   /*if width is false return 220px*/
   width: ${({ width }) => width || '220px'};
-  background-color: #ffd82b;
+  background-color: ${({ color }) => color || 'hsl(49, 100%, 58%)'};
   border: none;
   border-radius: 50px;
   font-family: 'Montserrat';
@@ -18,7 +18,7 @@ const Button = styled.button`
     css`
       height: 30px;
       width: 105px;
-      background-color: #e6e6e6;
+      background-color: hsl(0, 0%, 90%);
       font-size: 10px;
     `};
 `;
