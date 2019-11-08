@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Paragraph from './Paragraph';
 
-storiesOf('Paragraph', module).add('Normal', () => (
+storiesOf('Atoms/Paragraph', module).add('Normal', () => (
   <Paragraph>
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut sint ipsam voluptatem sed aliquid
     veniam delectus maiores sunt nihil quos impedit, odit dignissimos modi ducimus itaque architecto

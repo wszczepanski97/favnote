@@ -4,6 +4,6 @@ import { storiesOf } from '@storybook/react';
 import Input from './Input';
 
 // Add knobs to easily change colors of button
-storiesOf('Input', module)
+storiesOf('Atoms/Input', module)
   .add('Normal', () => <Input placeholder="Login" />)
   .add('Search', () => <Input placeholder="Search" search />);

@@ -18,7 +18,7 @@ const YellowBackground = styled.div`
   background: ${({ theme }) => theme.primary};
 `;
 
-storiesOf('ButtonIcon', module)
+storiesOf('Atoms/ButtonIcon', module)
   .addDecorator(story => <YellowBackground>{story()}</YellowBackground>)
   .add('Bulb', () => <ButtonIcon icon={Bulb} />)
   .add('Logout', () => <ButtonIcon icon={Logout} />)
