@@ -1,26 +1,25 @@
 import styled, { css } from 'styled-components';
 
 const Button = styled.button`
-  height: 47px;
-  /*if width is false return 220px*/
-  width: 220px;
-  background-color: ${({ color, theme }) => color || theme.primary};
+  background-color: ${({ theme }) => theme.note};
   border: none;
   border-radius: 50px;
   font-family: 'Montserrat';
-  font-size: 16px;
   font-weight: 600;
+  font-size: 16px;
+  height: 47px;
+  padding: 0;
   text-transform: uppercase;
+  width: 220px;
 
   ${({ secondary }) =>
-    /* if secondary is true, return new styles */
     secondary &&
     css`
-      height: 30px;
-      width: 105px;
       background-color: hsl(0, 0%, 90%);
       font-size: 10px;
-    `};
+      height: 30px;
+      width: 105px;
+    `}
 `;
 
 export default Button;
