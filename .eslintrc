@@ -23,7 +23,8 @@
       {
         "extensions": [".js"]
       }
-    ]
+    ],
+    "react/forbid-prop-types": 0
   },
   "settings": {
     "import/resolver": {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
@@ -50,7 +50,7 @@ const StyledAvatar = styled.img`
   border: 5px solid ${({ theme }) => theme.twitter};
   border-radius: 50px;
   position: absolute;
-  right: 25px;
+  right: 10px;
   top: 25px;
 `;
 
@@ -68,30 +68,51 @@ const StyledLinkButton = styled.a`
   transform: translateY(-50%);
 `;
 
-const Card = ({ cardType }) => (
-  <StyledWrapper>
-    <InnerWrapper activeColor={cardType}>
-      <StyledHeading>Hello Roman</StyledHeading>
-      <DateInfo>3 days</DateInfo>
-      {cardType === 'twitter' && <StyledAvatar src="https://avatars.io/twitter/hello_roman" />}
-      {cardType === 'article' && <StyledLinkButton href="https://youtube.com/helloroman" />}
-    </InnerWrapper>
-    <InnerWrapper flex>
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo ducimus fuga
-        repellendus illum
-      </Paragraph>
-      <Button secondary>REMOVE</Button>
-    </InnerWrapper>
-  </StyledWrapper>
-);
+// eslint-disable-next-line react/prefer-stateless-function
+class Card extends Component {
+  // state: {
+  //   redirect: false,
+  // };
+
+  render() {
+    // eslint-disable-next-line no-unused-vars
+    const { id, cardType, title, created, twitterName, articleUrl, content } = this.props;
+    return (
+      <StyledWrapper>
+        <InnerWrapper activeColor={cardType}>
+          <StyledHeading>{title}</StyledHeading>
+          <DateInfo>{created}</DateInfo>
+          {cardType === 'twitters' && (
+            <StyledAvatar src={`https://avatars.io/twitter/${twitterName}`} />
+          )}
+          {cardType === 'articles' && <StyledLinkButton href={articleUrl} />}
+        </InnerWrapper>
+        <InnerWrapper flex>
+          <Paragraph>
+            {content}
+            {id}
+          </Paragraph>
+          <Button secondary>REMOVE</Button>
+        </InnerWrapper>
+      </StyledWrapper>
+    );
+  }
+}
 
 Card.propTypes = {
+  id: PropTypes.number.isRequired,
   cardType: PropTypes.oneOf(['note', 'twitter', 'article']),
+  title: PropTypes.string.isRequired,
+  created: PropTypes.string.isRequired,
+  twitterName: PropTypes.string,
+  articleUrl: PropTypes.string,
+  content: PropTypes.string.isRequired,
 };
 
 Card.defaultProps = {
-  cardType: 'note',
+  cardType: 'notes',
+  twitterName: null,
+  articleUrl: null,
 };
 
 export default Card;

@@ -15,7 +15,7 @@ const YellowBackground = styled.div`
   align-items: center;
   width: 500px;
   height: 500px;
-  background: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.note};
 `;
 
 storiesOf('Atoms/ButtonIcon', module)
