@@ -8,10 +8,11 @@ const ButtonIcon = styled.button`
   background-size: 40%;
   border: none;
   border-radius: 20px;
+  display: block;
   height: 67px;
   width: 67px;
 
-  :active {
+  &.active {
     background-color: #ffffff;
   }
 `;

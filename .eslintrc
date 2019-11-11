@@ -10,6 +10,10 @@
   "rules": {
     "import/prefer-default-export": 0,
     "import/no-unresolved": [2, { "caseSensitive": false }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "optionalDependencies": false, "peerDependencies": false }
+    ],
     "no-extraneous-dependencies": 0,
     "no-console": "off",
     "no-undef": "off",
