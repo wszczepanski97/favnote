@@ -8,8 +8,8 @@ import DetailsPage from 'views/DetailsPage';
 import { routes } from 'routes';
 
 const Root = () => (
-  <MainTemplate>
-    <BrowserRouter>
+  <BrowserRouter>
+    <MainTemplate>
       <Switch>
         <Route exact path={routes.home} render={() => <Redirect to="/notes" />} />
         <Route exact path={routes.notes} component={Notes} />
@@ -19,8 +19,8 @@ const Root = () => (
         <Route exact path={routes.articles} component={Articles} />
         <Route path={routes.article} component={DetailsPage} />
       </Switch>
-    </BrowserRouter>
-  </MainTemplate>
+    </MainTemplate>
+  </BrowserRouter>
 );
 
 export default Root;

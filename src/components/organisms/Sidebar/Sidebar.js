@@ -16,7 +16,7 @@ const StyledWrapper = styled.nav`
   padding: 25px 0;
   width: 150px;
   height: 100vh;
-  background-color: ${({ theme, pageType }) => (pageType ? theme[pageType] : theme.note)};
+  background-color: ${({ theme, pageType }) => (pageType ? theme[pageType] : theme.notes)};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

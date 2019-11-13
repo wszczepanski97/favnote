@@ -5,7 +5,9 @@ import { routes } from 'routes';
 
 const DetailsPage = ({ match }) => (
   <DetailsTemplate>
-    <p>{match.path === routes.twitter}</p>
+    <p>{`is twitter: ${match.path === routes.twitter}`}</p>
+    <p>{`is note: ${match.path === routes.note}`}</p>
+    <p>{`is article: ${match.path === routes.article}`}</p>
   </DetailsTemplate>
 );
 

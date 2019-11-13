@@ -1,15 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import UserPageTemplate from 'components/templates/UserPageTemplate';
 import Input from 'components/atoms/Input/Input';
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   padding: 25px 150px 25px 70px;
 `;
-const GridWrapper = styled.div`
+
+const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 85px;
@@ -34,21 +35,21 @@ const StyledParagraph = styled(Paragraph)`
 
 const GridTemplate = ({ children, pageType }) => (
   <UserPageTemplate pageType={pageType}>
-    <Wrapper>
+    <StyledWrapper>
       <StyledPageHeader>
-        <Input search />
+        <Input search placeholder="Search" />
         <StyledHeading big as="h1">
           {pageType}
         </StyledHeading>
         <StyledParagraph>6 {pageType}</StyledParagraph>
       </StyledPageHeader>
-      <GridWrapper>{children}</GridWrapper>
-    </Wrapper>
+      <StyledGrid>{children}</StyledGrid>
+    </StyledWrapper>
   </UserPageTemplate>
 );
 
 GridTemplate.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.arrayOf(PropTypes.object).isRequired,
   pageType: PropTypes.oneOf(['notes', 'twitters', 'articles']),
 };
 

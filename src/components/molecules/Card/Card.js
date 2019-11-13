@@ -47,10 +47,10 @@ const StyledHeading = styled(Heading)`
 const StyledAvatar = styled.img`
   width: 86px;
   height: 86px;
-  border: 5px solid ${({ theme }) => theme.twitter};
+  border: 5px solid ${({ theme }) => theme.twitters};
   border-radius: 50px;
   position: absolute;
-  right: 10px;
+  right: 25px;
   top: 25px;
 `;
 
@@ -70,13 +70,9 @@ const StyledLinkButton = styled.a`
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Card extends Component {
-  // state: {
-  //   redirect: false,
-  // };
-
   render() {
-    // eslint-disable-next-line no-unused-vars
-    const { id, cardType, title, created, twitterName, articleUrl, content } = this.props;
+    const { cardType, title, created, twitterName, articleUrl, content } = this.props;
+
     return (
       <StyledWrapper>
         <InnerWrapper activeColor={cardType}>
@@ -88,10 +84,7 @@ class Card extends Component {
           {cardType === 'articles' && <StyledLinkButton href={articleUrl} />}
         </InnerWrapper>
         <InnerWrapper flex>
-          <Paragraph>
-            {content}
-            {id}
-          </Paragraph>
+          <Paragraph>{content}</Paragraph>
           <Button secondary>REMOVE</Button>
         </InnerWrapper>
       </StyledWrapper>
@@ -100,7 +93,6 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
   cardType: PropTypes.oneOf(['note', 'twitter', 'article']),
   title: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
@@ -110,7 +102,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  cardType: 'notes',
+  cardType: 'note',
   twitterName: null,
   articleUrl: null,
 };
