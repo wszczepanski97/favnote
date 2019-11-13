@@ -7,6 +7,7 @@
     "document": true,
     "window": true
   },
+  "parser": "babel-eslint",
   "rules": {
     "import/prefer-default-export": 0,
     "import/no-unresolved": [2, { "caseSensitive": false }],
@@ -24,7 +25,8 @@
         "extensions": [".js"]
       }
     ],
-    "react/forbid-prop-types": 0
+    "react/forbid-prop-types": 0,
+    "react/state-in-constructor": [0, "always"]
   },
   "settings": {
     "import/resolver": {
