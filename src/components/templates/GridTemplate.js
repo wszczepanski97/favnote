@@ -89,7 +89,7 @@ class GridTemplate extends Component {
           icon={Plus}
           onClick={this.handleNewItemBarToggle}
         />
-        <NewItemBar isVisible={isNewItemBarActive} />
+        <NewItemBar handleClose={this.handleNewItemBarToggle} isVisible={isNewItemBarActive} />
       </UserPageTemplate>
     );
   }
